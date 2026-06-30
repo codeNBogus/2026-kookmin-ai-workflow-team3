@@ -1,5 +1,17 @@
 # 2026-kookmin-ai-workflow-team3
+
 2026 국민대 AI Workflow 팀 3 프로젝트 저장소
+
+## 시작하기
+
+| 문서 | 설명 |
+|------|------|
+| [AGENTS.md](AGENTS.md) | **모든 에이전트** 공통 작업 절차 |
+| [Docs/project.md](Docs/project.md) | 프로젝트 개요 |
+| [Docs/git-workflow.md](Docs/git-workflow.md) | Git fork · 브랜치 · PR |
+| [cohorts/ai-agent/members/](cohorts/ai-agent/members/) | 팀원별 진행 기록 |
+
+Cursor 사용자는 `.cursor/skills/kookmin-team-workflow/` 스킬과 세션 시작 훅이 위 절차를 자동으로 참조한다.
 
 ## Git 워크플로우
 

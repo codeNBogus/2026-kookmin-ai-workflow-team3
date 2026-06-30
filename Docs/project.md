@@ -36,15 +36,21 @@
 
 ```
 .
+├── AGENTS.md                 # 에이전트 공통 작업 절차
+├── .cursor/
+│   ├── skills/kookmin-team-workflow/  # Cursor 스킬
+│   └── hooks/                # Cursor 세션 훅
 ├── Docs/
 │   ├── project.md
 │   ├── events.md
+│   ├── git-workflow.md
 │   └── 2026-world-cup-korea-vs-mexico.md
 ├── cohorts/
 │   └── ai-agent/
 │       └── members/
 │           ├── README.md
-│           └── progress_jeon.md
+│           └── progress_<이름>.md
+├── scripts/                  # upstream sync, 브랜치, PR
 └── README.md
 ```
 
