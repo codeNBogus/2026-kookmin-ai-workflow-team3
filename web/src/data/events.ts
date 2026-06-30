@@ -16,6 +16,66 @@ import tightMatchImg from '@image/팽팽한경기.jpg'
 import koreaGoalImg from '@image/한국선제골.jpg'
 
 export const events: Record<string, GameEvent> = {
+  'event-chapter-2': {
+    id: 'event-chapter-2',
+    type: 'chapter',
+    title: '감독 선임 기자회견',
+    background: pressConferenceImg,
+    chapter: {
+      label: '기자회견',
+      subtitle: '홍명보 감독 선임 직후',
+    },
+    text: '논란 속 선임. 기자들의 질문이 쏟아지는 자리다.',
+    autoNext: 'event-2',
+  },
+  'event-chapter-3': {
+    id: 'event-chapter-3',
+    type: 'chapter',
+    title: '월드컵 최종 예선',
+    background: afcQualifiersImg,
+    chapter: {
+      label: 'AFC 3차 예선',
+      subtitle: '2024~2025 · B조',
+    },
+    text: '이라크·요르단·오만·쿠웨이트·팔레스타인과의 본선 티켓 싸움.',
+    autoNext: 'event-3',
+  },
+  'event-chapter-4': {
+    id: 'event-chapter-4',
+    type: 'chapter',
+    title: 'VS 체코',
+    background: stadiumImg,
+    chapter: {
+      label: '조별리그',
+      subtitle: '2026 북중미 월드컵 · 1차전',
+    },
+    text: '본선 첫 경기. 역전승의 시작이 될 수도, 논란의 시작이 될 수도 있다.',
+    autoNext: 'event-4-1',
+  },
+  'event-chapter-5': {
+    id: 'event-chapter-5',
+    type: 'chapter',
+    title: 'VS 멕시코',
+    background: guadalajaraImg,
+    chapter: {
+      label: '조별리그',
+      subtitle: '2026 북중미 월드컵 · 2차전',
+    },
+    text: '승자는 32강 진출을 조기에 확정한다. 홈 관중 앞의 멕시코가 기다린다.',
+    autoNext: 'event-5-1',
+  },
+  'event-chapter-6': {
+    id: 'event-chapter-6',
+    type: 'chapter',
+    title: 'VS 남아공',
+    background: fightImg,
+    chapter: {
+      label: '조별리그',
+      subtitle: '2026 북중미 월드컵 · 3차전',
+    },
+    text: '1승 1패. 무승부만 해도 자력으로 32강이 가능한 마지막 조별리그 경기.',
+    autoNext: 'event-6-1',
+  },
   'event-1': {
     id: 'event-1',
     title: '빵집 상황',
@@ -26,7 +86,7 @@ export const events: Record<string, GameEvent> = {
         id: 'A',
         label:
           '2014년 브라질 월드컵의 수모... 나의 명예를 다시 세우겠어...',
-        next: 'event-2',
+        next: 'event-chapter-2',
         effects: { publicSentiment: -100 },
         feedback: '여론이 벌써부터 시끄럽다.',
       },
@@ -47,7 +107,7 @@ export const events: Record<string, GameEvent> = {
       {
         id: 'A',
         label: '저는 저를 버렸습니다. 한국축구를 위해 마지막으로 봉사하겠습니다.',
-        next: 'event-3',
+        next: 'event-chapter-3',
         effects: { publicSentiment: -100 },
         feedback: '기자들이 고개를 저으며 메모한다.',
       },
@@ -55,7 +115,7 @@ export const events: Record<string, GameEvent> = {
         id: 'B',
         label:
           '국민 여러분의 우려, 충분히 이해하고 있습니다. 논란 속에 이 자리에 선 만큼, 말보다 결과로 보여드리겠습니다. 끝까지 믿어봐 주십시오.',
-        next: 'event-3',
+        next: 'event-chapter-3',
         effects: { publicSentiment: -50 },
         feedback: '여론은 여전히 차갑지만, 일부 기자는 고개를 끄덕인다.',
       },
@@ -66,7 +126,7 @@ export const events: Record<string, GameEvent> = {
     title: '월드컵 최종 예선',
     background: afcQualifiersImg,
     text: '2024~2025년 AFC 3차 최종 예선. B조에서 이라크·요르단·오만·쿠웨이트·팔레스타인과 경기를 치른다. 조 2위로 2026 북중미 월드컵 본선 진출을 확정했다.',
-    autoNext: 'event-4-1',
+    autoNext: 'event-chapter-4',
     autoEffects: { publicSentiment: -40, teamMorale: 0 },
     autoFeedback:
       '경기력 논란은 끊이지 않았지만, 어찌됐든 월드컵 본선 티켓은 땄다.',
@@ -81,7 +141,7 @@ export const events: Record<string, GameEvent> = {
         id: 'A',
         label:
           '손흥민, 수고 많았다. 체코가 네 뒷공간만 조이고 있으니… 준비해 둔 대로 오현규 넣겠다. 끝까지 포기하지 말자.',
-        next: 'event-5-1',
+        next: 'event-chapter-5',
         effects: { publicSentiment: 20, teamMorale: 25 },
         feedback:
           '오현규 투입 직후 흐름이 바뀐다. 황인범 동점, 오현규 역전. 김승규 선방으로 2-1 승리. 라커룸에 웃음이 터진다.',
@@ -90,7 +150,7 @@ export const events: Record<string, GameEvent> = {
         id: 'B',
         label:
           '손흥민, 그 장면에서 조금 더 침착했어야 했는데… 그 부분은 아쉽다. 오늘은 여기까지다. 나와.',
-        next: 'event-5-1',
+        next: 'event-chapter-5',
         effects: { publicSentiment: -35, teamMorale: -15 },
         feedback:
           '2-1 역전승이지만 손흥민은 물병도 받지 않았다. 다음 날 "주장 교체 직후 선수 탓" 기사가 올라온다.',
@@ -155,7 +215,7 @@ export const events: Record<string, GameEvent> = {
         id: 'A',
         label:
           '조규성까지 넣는다. 측면에서 계속 크로스를 올리고, 세컨드 볼까지 전부 밀어붙여.',
-        next: 'event-6-1',
+        next: 'event-chapter-6',
         effects: { teamMorale: -30, publicSentiment: -30 },
         feedback:
           '조규성과 양현준이 연속 슈팅을 만들지만 랑헬 선방에 막혔다. 0-1 패배.',
@@ -164,7 +224,7 @@ export const events: Record<string, GameEvent> = {
         id: 'B',
         label:
           '숫자만 늘리지 마. 대형을 유지하고 이강인의 패스로 수비 사이를 침착하게 공략한다.',
-        next: 'event-6-1',
+        next: 'event-chapter-6',
         effects: { teamMorale: -10, publicSentiment: -10 },
         feedback:
           '동점골을 노렸지만 뚫지 못하고 0-1 패배. 무리한 공격 없이 조직력은 유지했다.',

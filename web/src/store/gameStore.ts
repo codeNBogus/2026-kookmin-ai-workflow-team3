@@ -17,6 +17,7 @@ type GameStore = {
   startGame: () => void
   selectChoice: (choiceId: string) => void
   advanceAuto: () => void
+  advanceChapter: () => void
   dismissFeedback: () => void
   resetGame: () => void
 }
@@ -95,6 +96,18 @@ function resolveNext(
   if (nextEvent.type === 'ending') {
     return {
       phase: 'ending',
+      currentEventId: resolved.eventId,
+      feedback: null,
+      pendingNext: null,
+      flags: resolved.flags,
+      tournamentResult: resolved.tournamentResult,
+      ...stats,
+    }
+  }
+
+  if (nextEvent.type === 'chapter') {
+    return {
+      phase: 'chapter',
       currentEventId: resolved.eventId,
       feedback: null,
       pendingNext: null,
@@ -198,6 +211,28 @@ export const useGameStore = create<GameStore>((set, get) => ({
     }
 
     set(resolveNext(event.autoNext, stats, flags, tournamentResult))
+  },
+
+  advanceChapter: () => {
+    const {
+      currentEventId,
+      publicSentiment,
+      teamMorale,
+      flags,
+      tournamentResult,
+    } = get()
+    const event = getEvent(currentEventId)
+
+    if (event.type !== 'chapter' || !event.autoNext) return
+
+    set(
+      resolveNext(
+        event.autoNext,
+        { publicSentiment, teamMorale },
+        flags,
+        tournamentResult,
+      ),
+    )
   },
 
   dismissFeedback: () => {

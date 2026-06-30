@@ -37,7 +37,7 @@ web/src/
 ├── game/tiers.ts        # 엔딩 티어 (붕괴~고조)
 ├── store/gameStore.ts   # Zustand: phase, 수치, 분기
 ├── screens/             # TitleScreen, EventScreen, EndingScreen
-└── components/          # BackgroundImage, NarrativeBox, ChoiceButtons, FeedbackOverlay
+└── components/          # BackgroundImage, NarrativeBox, ChoiceButtons
 ```
 
 이미지: `@image/` alias → 저장소 루트 `image/` (`web/vite.config.ts`)
@@ -46,7 +46,7 @@ web/src/
 
 | 시점 | UI |
 |------|-----|
-| 선택·진행 중 | **숫자 비공개**. `FeedbackOverlay`에 (연출) 텍스트만 |
+| 선택·진행 중 | **숫자 비공개**. `NarrativeBox`(variant `feedback`)에 (연출) 텍스트만 |
 | 엔딩 | `EndingScreen`에서 수치 + 티어 + 성적 + 「제목」 |
 
 - `publicSentiment` = 국민 민심, `teamMorale` = 선수단 분위기

@@ -1,4 +1,4 @@
-export type GamePhase = 'title' | 'event' | 'feedback' | 'ending'
+export type GamePhase = 'title' | 'chapter' | 'event' | 'feedback' | 'ending'
 
 export type StatEffects = {
   publicSentiment?: number
@@ -21,6 +21,11 @@ export type EndingInfo = {
   epilogue: string
 }
 
+export type ChapterInfo = {
+  label: string
+  subtitle?: string
+}
+
 export type GameEvent = {
   id: string
   title: string
@@ -30,7 +35,8 @@ export type GameEvent = {
   autoNext?: string
   autoEffects?: StatEffects
   autoFeedback?: string
-  type?: 'ending'
+  type?: 'chapter' | 'ending'
+  chapter?: ChapterInfo
   ending?: EndingInfo
 }
 
