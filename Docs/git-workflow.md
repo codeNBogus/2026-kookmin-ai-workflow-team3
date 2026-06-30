@@ -263,6 +263,7 @@ git push origin --delete feature/작업-설명
 | `scripts/new-branch.ps1` | 동기화 후 컨벤션 브랜치 생성 |
 | `scripts/push-to-fork.ps1` | 현재 브랜치를 origin에 push |
 | `scripts/open-upstream-pr.ps1` | upstream PR 생성 (gh CLI) |
+| `scripts/init-member-progress.ps1` | `progress_<닉네임>.md` 최초 생성 |
 
 PowerShell 실행 정책 오류:
 

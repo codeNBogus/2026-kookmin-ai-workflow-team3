@@ -6,12 +6,22 @@
 
 | 파일 | 용도 |
 |------|------|
-| `progress_<성>.md` | 작업 진행 기록 (필수) |
+| `progress_<닉네임>.md` | 작업 진행 기록 (필수) |
 | 아래 템플릿 | 에이전트 사용 요약 (선택, 개인별로 복사해 사용) |
 
-새 팀원은 [progress-template.md](../../../.cursor/skills/kookmin-team-workflow/progress-template.md)를 복사해 `progress_<성>.md`를 만든다.
+새 팀원은 아래 중 하나로 파일을 만든다.
 
-참고 예시: [progress_jeon.md](progress_jeon.md)
+```powershell
+# 권장: 스크립트로 생성
+.\scripts\init-member-progress.ps1 -Nickname <닉네임>
+
+# 수동: 템플릿 복사
+# .cursor/skills/kookmin-team-workflow/progress-template.md → progress_<닉네임>.md
+```
+
+참고 예시: [progress_jeon.md](progress_jeon.md), [progress_jeonghj.md](progress_jeonghj.md)
+
+작업마다 갱신 절차는 [member-progress 스킬](../../../.cursor/skills/member-progress/SKILL.md)을 참고한다.
 
 ## 에이전트 사용 요약 템플릿
 
