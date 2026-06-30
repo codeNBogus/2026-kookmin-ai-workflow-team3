@@ -33,7 +33,7 @@ git checkout main
 ## 맥락 읽기 우선순위
 
 1. `Docs/project.md` — 프로젝트 목표
-2. `Docs/events.md` — 이벤트·분기 작업 시
+2. `Docs/events.md` — 이벤트·분기 작업 시 (`Docs/홍명보_캐릭터명세.md` + [hongmyungbo-dialogue](../hongmyungbo-dialogue/SKILL.md) 스킬)
 3. `cohorts/ai-agent/members/progress_*.md` — 팀·개인 진행 상황
 4. `Docs/git-workflow.md` — Git 작업 시
 5. `image/STYLE_GUIDE.md` — 이미지 작업 시
