@@ -14,6 +14,13 @@ import lockerRoomImg from '@image/이게팀이야.jpg'
 import saGoalImg from '@image/남아공선제골.webp'
 import tightMatchImg from '@image/팽팽한경기.jpg'
 import koreaGoalImg from '@image/한국선제골.jpg'
+import legendReturnImg from '@image/전설의귀환.jpg'
+import honorRestoreImg from '@image/명예회복.png'
+import luckyRound32Img from '@image/운좋은32강.jpg'
+import playersCarryImg from '@image/선수덕분.avif'
+import fightResultImg from '@image/싸워결과.webp'
+import pingpongImg from '@image/탁구.webp'
+import resignationImg from '@image/사퇴주머니.webp'
 
 export const events: Record<string, GameEvent> = {
   'event-chapter-2': {
@@ -209,6 +216,7 @@ export const events: Record<string, GameEvent> = {
     id: 'event-5-3',
     title: '경기 막판 승부수',
     background: mexicoConcedeImg,
+    feedbackBackground: mexicoAfterImg,
     text: '후반 30분을 넘겼지만 대한민국은 여전히 0-1로 뒤져 있다. 멕시코는 수비 라인을 내리고 골문을 지키기 시작했다.',
     choices: [
       {
@@ -436,7 +444,7 @@ export const events: Record<string, GameEvent> = {
   'event-7-2': {
     id: 'event-7-2',
     title: '전설의 귀환',
-    background: koreaGoalImg,
+    background: legendReturnImg,
     text: '조별리그를 넘어 토너먼트에서도 팀이 들썩인다. 여론은 홍명보 감독을 다시 부른 선택을 후회하지 않는다고 말한다.',
     type: 'ending',
     ending: {
@@ -449,7 +457,7 @@ export const events: Record<string, GameEvent> = {
   'event-7-3': {
     id: 'event-7-3',
     title: '명예 회복',
-    background: pressConferenceImg,
+    background: honorRestoreImg,
     text: '조별리그를 통과한 뒤, 기자회견장 분위기가 달라졌다. "말보다 결과"라던 약속이 드디어 믿음으로 바뀌었다.',
     type: 'ending',
     ending: {
@@ -462,7 +470,7 @@ export const events: Record<string, GameEvent> = {
   'event-7-4': {
     id: 'event-7-4',
     title: '운 좋은 32강',
-    background: stadiumImg,
+    background: luckyRound32Img,
     text: '32강 티켓은 챙겼지만, 논란과 비판은 여전하다. "일단 갔으니 됐다"는 말과 "근본은 안 바뀌었다"는 말이 동시에 올라온다.',
     type: 'ending',
     ending: {
@@ -475,7 +483,7 @@ export const events: Record<string, GameEvent> = {
   'event-7-5': {
     id: 'event-7-5',
     title: '선수 덕분',
-    background: mexicoAfterImg,
+    background: playersCarryImg,
     text: '결과만 보면 통과. 하지만 인터넷과 기자회견은 감독이 아니라 선수들 덕분이라고 말한다.',
     type: 'ending',
     ending: {
@@ -488,7 +496,7 @@ export const events: Record<string, GameEvent> = {
   'event-7-6': {
     id: 'event-7-6',
     title: 'Fight의 대가',
-    background: fightImg,
+    background: fightResultImg,
     text: '"Fight" 한마디가 라커룸을 갈라놓았다. 남아공전 결과까지 흐름이 무너지고, 조별리그 탈락으로 이어진다.',
     type: 'ending',
     ending: {
@@ -501,7 +509,7 @@ export const events: Record<string, GameEvent> = {
   'event-7-7': {
     id: 'event-7-7',
     title: '배신당한 감독',
-    background: lockerRoomImg,
+    background: pingpongImg,
     text: '여론은 감독 편이었지만, 선수단은 무너졌다. 탈락 직후 "감독 말은 맞았는데 팀이 따라주지 않았다"는 분석이 나온다.',
     type: 'ending',
     ending: {
@@ -514,7 +522,7 @@ export const events: Record<string, GameEvent> = {
   'event-7-8': {
     id: 'event-7-8',
     title: '책임 회피의 끝',
-    background: pressConferenceImg,
+    background: resignationImg,
     text: '조별리그 탈락. 사퇴 기자회견에서 특정 선수를 거론하며 "그 부분은 아쉽다"고 말한다. 여론은 마지막까지도 식지 않는다.',
     type: 'ending',
     ending: {

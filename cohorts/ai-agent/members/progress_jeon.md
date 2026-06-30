@@ -20,6 +20,7 @@
 | 완료 | 멕시코전 이벤트 세분화 및 배경 이미지 연결 | `Docs/events.md`, `image/` |
 | 완료 | 이미지 스타일 가이드 삭제 및 참조 정리 | `AGENTS.md`, `.cursor/skills/kookmin-team-workflow/SKILL.md` |
 | 완료 | 선택 결과의 민심·분위기 변화 방향 표시 | `web/src/` |
+| 완료 | 선택 결과 다시 선택 기능 추가 | `web/src/` |
 
 ## 완료된 작업
 
@@ -113,7 +114,20 @@
 
 수정한 결과물:
 
-- `web/src/components/FeedbackOverlay.tsx`
+- `web/src/components/StatTrendBadges.tsx`
+- `web/src/screens/EventScreen.tsx`
+- `web/src/store/gameStore.ts`
+- `web/src/game/types.ts`
+
+### 8. 선택 결과 다시 선택 기능 추가
+
+- 선택 직전 게임 상태를 한 단계 저장하는 스냅샷 추가
+- 현장 반응 화면에 `다시 선택` 버튼 추가
+- 다시 선택 시 민심, 분위기, 이벤트, 플래그와 경기 결과 상태를 모두 복원
+- 자동 진행 이벤트에서는 다시 선택 버튼을 숨기도록 처리
+
+수정한 결과물:
+
 - `web/src/screens/EventScreen.tsx`
 - `web/src/store/gameStore.ts`
 - `web/src/game/types.ts`

@@ -1,4 +1,5 @@
-import { BackgroundImage } from '@/components/BackgroundImage'
+import { SceneImage } from '@/components/SceneImage'
+import { ScreenBackdrop } from '@/components/ScreenBackdrop'
 import { formatStat } from '@/game/tiers'
 import { getEvent } from '@/data/events'
 import { useGameStore } from '@/store/gameStore'
@@ -17,11 +18,11 @@ export function EndingScreen() {
   }
 
   return (
-    <main className="relative flex min-h-screen flex-col">
-      <BackgroundImage src={event.background} alt={event.title} />
+    <ScreenBackdrop className="justify-center">
+      <div className="mx-auto flex w-full max-w-lg flex-col gap-4 p-6">
+        <SceneImage src={event.background} alt={event.title} />
 
-      <div className="relative z-10 flex flex-1 flex-col items-center justify-center p-6">
-        <div className="w-full max-w-lg rounded-xl border border-white/10 bg-slate-blue/95 p-6 text-center shadow-xl backdrop-blur-sm">
+        <div className="rounded-xl border border-white/10 bg-slate-blue/95 p-6 text-center shadow-xl">
           <p className="mb-2 text-sm text-cool-gray">{ending.grade}</p>
 
           <div className="mb-4 space-y-1 text-sm text-off-white">
@@ -46,6 +47,6 @@ export function EndingScreen() {
           </button>
         </div>
       </div>
-    </main>
+    </ScreenBackdrop>
   )
 }

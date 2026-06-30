@@ -5,6 +5,14 @@ export type StatEffects = {
   teamMorale?: number
 }
 
+export type ChoiceSnapshot = {
+  currentEventId: string
+  publicSentiment: number
+  teamMorale: number
+  flags: Record<string, boolean>
+  tournamentResult: 'round-of-32' | 'eliminated' | null
+}
+
 export type Choice = {
   id: string
   label: string
@@ -30,6 +38,8 @@ export type GameEvent = {
   id: string
   title: string
   background?: string
+  /** 피드백(현장 반응) 단계에서 표시할 배경. 없으면 background 유지 */
+  feedbackBackground?: string
   text: string
   choices?: Choice[]
   autoNext?: string
@@ -47,6 +57,7 @@ export type GameState = {
   currentEventId: string
   feedback: string | null
   feedbackEffects: StatEffects | null
+  previousChoiceState: ChoiceSnapshot | null
   pendingNext: string | null
   flags: Record<string, boolean>
   tournamentResult: 'round-of-32' | 'eliminated' | null

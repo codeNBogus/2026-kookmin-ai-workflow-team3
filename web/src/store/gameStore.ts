@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { getEvent } from '@/data/events'
 import { resolve6_4Branch, resolveEndingId } from '@/game/endingResolver'
-import type { GamePhase, StatEffects } from '@/game/types'
+import type { ChoiceSnapshot, GamePhase, StatEffects } from '@/game/types'
 
 const INITIAL_EVENT_ID = 'event-1'
 
@@ -12,6 +12,7 @@ type GameStore = {
   currentEventId: string
   feedback: string | null
   feedbackEffects: StatEffects | null
+  previousChoiceState: ChoiceSnapshot | null
   pendingNext: string | null
   flags: Record<string, boolean>
   tournamentResult: 'round-of-32' | 'eliminated' | null
@@ -19,6 +20,7 @@ type GameStore = {
   selectChoice: (choiceId: string) => void
   advanceAuto: () => void
   advanceChapter: () => void
+  undoChoice: () => void
   dismissFeedback: () => void
   resetGame: () => void
 }
@@ -84,6 +86,7 @@ function resolveNext(
       phase: 'stats',
       feedback: null,
       feedbackEffects: null,
+      previousChoiceState: null,
       pendingNext: afterStats,
       flags,
       tournamentResult,
@@ -99,6 +102,7 @@ function resolveNext(
       currentEventId: INITIAL_EVENT_ID,
       feedback: null,
       feedbackEffects: null,
+      previousChoiceState: null,
       pendingNext: null,
       flags: {},
       tournamentResult: null,
@@ -114,6 +118,7 @@ function resolveNext(
       currentEventId: resolved.eventId,
       feedback: null,
       feedbackEffects: null,
+      previousChoiceState: null,
       pendingNext: null,
       flags: resolved.flags,
       tournamentResult: resolved.tournamentResult,
@@ -127,6 +132,7 @@ function resolveNext(
       currentEventId: resolved.eventId,
       feedback: null,
       feedbackEffects: null,
+      previousChoiceState: null,
       pendingNext: null,
       flags: resolved.flags,
       tournamentResult: resolved.tournamentResult,
@@ -139,6 +145,7 @@ function resolveNext(
     currentEventId: resolved.eventId,
     feedback: null,
     feedbackEffects: null,
+    previousChoiceState: null,
     pendingNext: null,
     flags: resolved.flags,
     tournamentResult: resolved.tournamentResult,
@@ -153,6 +160,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
   currentEventId: INITIAL_EVENT_ID,
   feedback: null,
   feedbackEffects: null,
+  previousChoiceState: null,
   pendingNext: null,
   flags: {},
   tournamentResult: null,
@@ -165,6 +173,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
       currentEventId: INITIAL_EVENT_ID,
       feedback: null,
       feedbackEffects: null,
+      previousChoiceState: null,
       pendingNext: null,
       flags: {},
       tournamentResult: null,
@@ -172,12 +181,15 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
   selectChoice: (choiceId) => {
     const {
+      phase,
       currentEventId,
       publicSentiment,
       teamMorale,
       flags,
       tournamentResult,
     } = get()
+    if (phase !== 'event') return
+
     const event = getEvent(currentEventId)
     const choice = event.choices?.find((item) => item.id === choiceId)
 
@@ -195,6 +207,13 @@ export const useGameStore = create<GameStore>((set, get) => ({
         phase: 'feedback',
         feedback: choice.feedback,
         feedbackEffects: choice.effects ?? null,
+        previousChoiceState: {
+          currentEventId,
+          publicSentiment,
+          teamMorale,
+          flags: { ...flags },
+          tournamentResult,
+        },
         pendingNext: choice.next,
       })
       return
@@ -227,6 +246,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
         phase: 'feedback',
         feedback: event.autoFeedback,
         feedbackEffects: event.autoEffects ?? null,
+        previousChoiceState: null,
         pendingNext: event.autoNext,
       })
       return
@@ -257,6 +277,24 @@ export const useGameStore = create<GameStore>((set, get) => ({
     )
   },
 
+  undoChoice: () => {
+    const { phase, previousChoiceState } = get()
+    if (phase !== 'feedback' || !previousChoiceState) return
+
+    set({
+      phase: 'event',
+      currentEventId: previousChoiceState.currentEventId,
+      publicSentiment: previousChoiceState.publicSentiment,
+      teamMorale: previousChoiceState.teamMorale,
+      flags: previousChoiceState.flags,
+      tournamentResult: previousChoiceState.tournamentResult,
+      feedback: null,
+      feedbackEffects: null,
+      previousChoiceState: null,
+      pendingNext: null,
+    })
+  },
+
   dismissFeedback: () => {
     const {
       pendingNext,
@@ -277,6 +315,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
       currentEventId: INITIAL_EVENT_ID,
       feedback: null,
       feedbackEffects: null,
+      previousChoiceState: null,
       pendingNext: null,
       flags: {},
       tournamentResult: null,

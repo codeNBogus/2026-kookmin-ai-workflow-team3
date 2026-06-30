@@ -1,4 +1,5 @@
-import { BackgroundImage } from '@/components/BackgroundImage'
+import { SceneImage } from '@/components/SceneImage'
+import { ScreenBackdrop } from '@/components/ScreenBackdrop'
 import { getEvent } from '@/data/events'
 import { useGameStore } from '@/store/gameStore'
 
@@ -14,29 +15,31 @@ export function ChapterScreen() {
   }
 
   return (
-    <main className="relative flex min-h-screen flex-col items-center justify-center">
-      <BackgroundImage src={event.background} alt={event.title} />
+    <ScreenBackdrop className="justify-center">
+      <div className="mx-auto flex w-full max-w-2xl flex-col items-center gap-6 px-6 py-8 text-center">
+        <SceneImage src={event.background} alt={event.title} />
 
-      <div className="relative z-10 mx-auto max-w-2xl px-6 text-center">
-        <p className="mb-4 text-sm font-semibold tracking-[0.25em] text-energy-red uppercase">
-          {chapter.label}
-        </p>
-
-        <h1 className="mb-3 text-4xl font-bold text-off-white md:text-5xl">
-          {event.title}
-        </h1>
-
-        {chapter.subtitle && (
-          <p className="mb-6 text-base text-cool-gray md:text-lg">
-            {chapter.subtitle}
+        <div>
+          <p className="mb-4 text-sm font-semibold tracking-[0.25em] text-energy-red uppercase">
+            {chapter.label}
           </p>
-        )}
 
-        {event.text && (
-          <p className="mb-10 text-sm leading-relaxed text-off-white/90 md:text-base">
-            {event.text}
-          </p>
-        )}
+          <h1 className="mb-3 text-4xl font-bold text-off-white md:text-5xl">
+            {event.title}
+          </h1>
+
+          {chapter.subtitle && (
+            <p className="mb-4 text-base text-cool-gray md:text-lg">
+              {chapter.subtitle}
+            </p>
+          )}
+
+          {event.text && (
+            <p className="text-sm leading-relaxed text-off-white/90 md:text-base">
+              {event.text}
+            </p>
+          )}
+        </div>
 
         <button
           type="button"
@@ -46,6 +49,6 @@ export function ChapterScreen() {
           시작
         </button>
       </div>
-    </main>
+    </ScreenBackdrop>
   )
 }
