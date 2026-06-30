@@ -15,9 +15,10 @@
 | 완료 | 2026 FIFA 월드컵 대한민국 vs 멕시코 경기 자료조사 | `Docs/2026-world-cup-korea-vs-mexico.md` |
 | 완료 | 대한민국 vs 멕시코 경기 전 정보 추가 조사 | `Docs/2026-world-cup-korea-vs-mexico.md` |
 | 완료 | 작업 진행 기록 파일 생성 및 이동 반영 | `cohorts/ai-agent/members/progress_jeon.md` |
-| 완료 | 프로젝트 이미지 폴더와 스타일 가이드 생성 | `image/STYLE_GUIDE.md` |
-| 완료 | 사진 우선 원칙에 맞게 이미지 스타일 가이드 개정 | `image/STYLE_GUIDE.md` |
+| 완료 | 프로젝트 이미지 폴더와 스타일 가이드 생성 | `image/STYLE_GUIDE.md` (현재 삭제됨) |
+| 완료 | 사진 우선 원칙에 맞게 이미지 스타일 가이드 개정 | `image/STYLE_GUIDE.md` (현재 삭제됨) |
 | 완료 | 멕시코전 이벤트 세분화 및 배경 이미지 연결 | `Docs/events.md`, `image/` |
+| 완료 | 이미지 스타일 가이드 삭제 및 참조 정리 | `AGENTS.md`, `.cursor/skills/kookmin-team-workflow/SKILL.md` |
 
 ## 완료된 작업
 
@@ -61,7 +62,7 @@
 
 결과물:
 
-- [프로젝트 이미지 스타일 가이드](../../../image/STYLE_GUIDE.md)
+- `image/STYLE_GUIDE.md` (현재 삭제됨)
 
 ### 4. 이미지 스타일 가이드 운영 원칙 개정
 
@@ -74,7 +75,7 @@
 
 수정한 결과물:
 
-- [프로젝트 이미지 스타일 가이드](../../../image/STYLE_GUIDE.md)
+- `image/STYLE_GUIDE.md` (현재 삭제됨)
 
 ### 5. 멕시코전 이벤트 세분화 및 배경 이미지 연결
 
@@ -90,6 +91,17 @@
 - `image/김승규실책.jpg`
 - `image/멕시코실점후.jpg`
 - `image/멕시코경기후.jpg`
+
+### 6. 이미지 스타일 가이드 삭제 및 참조 정리
+
+- 별도 이미지 생성 가이드가 더 이상 필요하지 않아 `image/STYLE_GUIDE.md` 삭제
+- `AGENTS.md`와 팀 작업 스킬에서 삭제된 가이드 참조 제거
+- 과거 진행 기록의 가이드 경로를 삭제 상태로 표시
+
+수정한 결과물:
+
+- [에이전트 작업 가이드](../../../AGENTS.md)
+- [팀 작업 스킬](../../../.cursor/skills/kookmin-team-workflow/SKILL.md)
 
 ## 작업 관리 원칙
 

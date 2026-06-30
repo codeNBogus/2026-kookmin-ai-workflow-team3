@@ -36,7 +36,6 @@
 ## 작업 중
 
 - 이벤트·문서 작업은 [Docs/events.md](Docs/events.md)와 기존 조사 문서(`Docs/`) 형식을 맞춘다.
-- 이미지·비주얼 작업은 [image/STYLE_GUIDE.md](image/STYLE_GUIDE.md)를 따른다.
 - 외부 자료 조사 시 **조사 기준일**과 **출처**를 문서에 남긴다.
 - 커밋·push·PR은 **사용자가 요청할 때만** 수행한다.
 
