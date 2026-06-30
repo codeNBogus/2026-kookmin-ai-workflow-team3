@@ -22,6 +22,7 @@
 | 완료 | 이벤트 6-4-1/2/3 (후반전 분기) 시나리오 작성 | `Docs/events.md` |
 | 완료 | 타이틀 화면 배경 이미지 및 제목 변경 | `web/src/screens/TitleScreen.tsx` |
 | 완료 | 이벤트 3→4 전환 시 점수 현황(StatsScreen) 추가 | `web/src/screens/StatsScreen.tsx` |
+| 완료 | 이벤트 가중치 밸런스 조정 (E1·E2·E6-1) | `web/src/data/events.ts`, `Docs/events.md` |
 | 대기 중 | 이벤트 4·5·6-5 시나리오 작성 | `Docs/events.md` |
 
 ## 완료된 작업
@@ -114,6 +115,18 @@
 - [web/src/game/types.ts](../../../web/src/game/types.ts)
 - [web/src/store/gameStore.ts](../../../web/src/store/gameStore.ts)
 - [web/src/App.tsx](../../../web/src/App.tsx)
+
+### 10. 이벤트 가중치 밸런스 조정
+
+- 작업일: 2026년 6월 30일
+- 긍정 엔딩(7-2, 7-3) 달성 불가 문제 분석 후 초기 패널티 완화
+- E1-A: -100 → -60 / E2-A: -100 → -50 / E2-B: -50 → -20
+- E6-1-B: +50 → +30 / E6-1-C: -100 → -60
+
+결과물:
+- [web/src/data/events.ts](../../../web/src/data/events.ts)
+- [Docs/events.md](../../../Docs/events.md)
+
 
 ## 다음 작업
 

@@ -87,7 +87,7 @@ export const events: Record<string, GameEvent> = {
         label:
           '2014년 브라질 월드컵의 수모... 나의 명예를 다시 세우겠어...',
         next: 'event-chapter-2',
-        effects: { publicSentiment: -100 },
+        effects: { publicSentiment: -60 },
         feedback: '여론이 벌써부터 시끄럽다.',
       },
       {
@@ -108,7 +108,7 @@ export const events: Record<string, GameEvent> = {
         id: 'A',
         label: '저는 저를 버렸습니다. 한국축구를 위해 마지막으로 봉사하겠습니다.',
         next: 'event-chapter-3',
-        effects: { publicSentiment: -100 },
+        effects: { publicSentiment: -50 },
         feedback: '기자들이 고개를 저으며 메모한다.',
       },
       {
@@ -116,7 +116,7 @@ export const events: Record<string, GameEvent> = {
         label:
           '국민 여러분의 우려, 충분히 이해하고 있습니다. 논란 속에 이 자리에 선 만큼, 말보다 결과로 보여드리겠습니다. 끝까지 믿어봐 주십시오.',
         next: 'event-chapter-3',
-        effects: { publicSentiment: -50 },
+        effects: { publicSentiment: -20 },
         feedback: '여론은 여전히 차갑지만, 일부 기자는 고개를 끄덕인다.',
       },
     ],
@@ -250,7 +250,7 @@ export const events: Record<string, GameEvent> = {
         label:
           '멕시코전 패배가 아직 머릿속에 남아있을 거야. 오늘 이겨야 32강 가서도 자신 있게 뛸 수 있어. 이 경기가 우리 분위기 바꾸는 분기점이야.',
         next: 'event-6-2',
-        effects: { teamMorale: 50 },
+        effects: { teamMorale: 30 },
         feedback: '선수들의 눈빛이 달라졌다.',
       },
       {
@@ -258,7 +258,7 @@ export const events: Record<string, GameEvent> = {
         label:
           'Fight. 단어알지? 싸워. 난 오늘 그걸(싸우는 모습을) 여러 번 볼 거야.',
         next: 'event-6-2',
-        effects: { teamMorale: -100 },
+        effects: { teamMorale: -60 },
         feedback: '라커룸이 순식간에 차갑게 식었다.',
         setFlag: 'event-6-1-C',
       },
