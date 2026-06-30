@@ -23,6 +23,8 @@
 | 완료 | 타이틀 화면 배경 이미지 및 제목 변경 | `web/src/screens/TitleScreen.tsx` |
 | 완료 | 이벤트 3→4 전환 시 점수 현황(StatsScreen) 추가 | `web/src/screens/StatsScreen.tsx` |
 | 완료 | 이벤트 가중치 밸런스 조정 (E1·E2·E6-1) | `web/src/data/events.ts`, `Docs/events.md` |
+| 완료 | endingResolver 임계값 수정 및 8개 엔딩 검증 | `web/src/game/endingResolver.ts` |
+| 완료 | EndingScreen 이펙트 리디자인 (긍정/부정 분기) | `web/src/screens/EndingScreen.tsx`, `web/src/index.css` |
 | 대기 중 | 이벤트 4·5·6-5 시나리오 작성 | `Docs/events.md` |
 
 ## 완료된 작업
@@ -127,6 +129,29 @@
 - [web/src/data/events.ts](../../../web/src/data/events.ts)
 - [Docs/events.md](../../../Docs/events.md)
 
+
+### 11. endingResolver 임계값 수정 및 8개 엔딩 검증
+
+- 작업일: 2026년 6월 30일
+- 전체 선택 경로의 PS 범위(-255~-40) 분석
+- 기존 임계값(긍정 엔딩: PS ≥ +30)이 달성 불가임을 발견 → 실제 범위에 맞게 수정
+- Node.js 시뮬레이션으로 7-1~7-8 8개 모든 엔딩 도달 가능성 검증
+
+결과물:
+- [web/src/game/endingResolver.ts](../../../web/src/game/endingResolver.ts)
+
+### 12. EndingScreen 이펙트 리디자인
+
+- 작업일: 2026년 6월 30일
+- 배경 이미지 제거 → 엔딩 코드별 동적 색상 테마 글로우 이펙트로 교체
+- 긍정 엔딩 (7-2, 7-3): 오브 3개 밝고 빠른 유동 + 빛 입자 18개 위로 솟구침 + 중앙 방사형 글로우
+- 부정 엔딩 (7-6, 7-7, 7-8): 오브 2개 어둡고 느린 유동 + 잿빛 입자 14개 아래로 낙하 + 사방에서 조여드는 비네트
+- 중립 엔딩 (7-1, 7-4, 7-5): 2오브 기본 효과
+- upstream EndingCatalogPanel 기능과 충돌 병합
+
+결과물:
+- [web/src/screens/EndingScreen.tsx](../../../web/src/screens/EndingScreen.tsx)
+- [web/src/index.css](../../../web/src/index.css)
 
 ## 다음 작업
 

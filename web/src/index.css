@@ -50,3 +50,56 @@ body {
     var(--reaction-delay, 0s) infinite;
   opacity: 0;
 }
+
+@keyframes orb-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(30px, -40px) scale(1.08); }
+  66%       { transform: translate(-20px, 20px) scale(0.95); }
+}
+
+@keyframes orb-float-r {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(-40px, 30px) scale(1.06); }
+  66%       { transform: translate(20px, -20px) scale(0.97); }
+}
+
+@keyframes orb-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.5; }
+  50%       { transform: translate(15px, -20px) scale(1.04); opacity: 0.3; }
+}
+
+/* 긍정: 빛 입자가 위로 솟구침 */
+@keyframes rise {
+  0%   { transform: translateY(0) scale(1);    opacity: 0.9; }
+  70%  { opacity: 0.5; }
+  100% { transform: translateY(-90vh) scale(0.4); opacity: 0; }
+}
+
+/* 부정: 재처럼 아래로 떨어짐 */
+@keyframes fall {
+  0%   { transform: translateY(-10px); opacity: 0; }
+  10%  { opacity: 0.5; }
+  90%  { opacity: 0.2; }
+  100% { transform: translateY(100vh);  opacity: 0; }
+}
+
+/* 부정: 비네트 맥박 */
+@keyframes vignette-pulse {
+  0%, 100% { opacity: 0.55; }
+  50%       { opacity: 0.75; }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.animate-orb         { animation: orb-float   8s ease-in-out infinite; }
+.animate-orb-r       { animation: orb-float-r 10s ease-in-out infinite; }
+.animate-orb-slow    { animation: orb-slow    14s ease-in-out infinite; }
+.animate-vignette    { animation: vignette-pulse 4s ease-in-out infinite; }
+.animate-fade-up     { animation: fade-up 0.6s ease-out both; }
+.animate-fade-up-1   { animation: fade-up 0.6s 0.15s ease-out both; }
+.animate-fade-up-2   { animation: fade-up 0.6s 0.3s  ease-out both; }
+.animate-fade-up-3   { animation: fade-up 0.6s 0.45s ease-out both; }
+.animate-fade-up-4   { animation: fade-up 0.6s 0.6s  ease-out both; }
