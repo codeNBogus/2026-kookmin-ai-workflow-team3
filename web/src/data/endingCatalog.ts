@@ -25,7 +25,7 @@ export const ENDING_CATALOG: EndingCatalogEntry[] = [
     code: 'E1-L',
     title: '전설의 귀환',
     grade: '16강 이상',
-    condition: '16강+ · 민심 ≥ +30 · 사기 ≥ +30',
+    condition: '32강 진출 · 사기 ≥ +140 · 민심 ≥ −55',
     summary: '대성공·히든, 2014의 그늘 완전 탈출',
   },
   {
@@ -34,7 +34,7 @@ export const ENDING_CATALOG: EndingCatalogEntry[] = [
     code: 'E2-H',
     title: '명예 회복',
     grade: '32강',
-    condition: '32강 · 민심 ≥ +30 · 사기 ≥ +30',
+    condition: '32강 진출 · 민심 ≥ −120 · 사기 ≥ +40',
     summary: '2014 수모 씻고 환호받는 감독',
   },
   {
@@ -43,7 +43,7 @@ export const ENDING_CATALOG: EndingCatalogEntry[] = [
     code: 'E2-I',
     title: '운 좋은 32강',
     grade: '32강',
-    condition: '32강 · 7-3·7-5 미충족',
+    condition: '32강 진출 · 7-2·7-3·7-5 미충족',
     summary: '32강은 갔지만 논란은 그대로',
   },
   {
@@ -52,7 +52,7 @@ export const ENDING_CATALOG: EndingCatalogEntry[] = [
     code: 'E2-T',
     title: '선수 덕분',
     grade: '32강',
-    condition: '32강 · 민심 ≤ -30 · 사기 ≥ +30',
+    condition: '32강 진출 · 민심 ≤ −150 · 사기 ≥ +50',
     summary: '감독은 비판, 팀은 살림',
   },
   {
@@ -61,7 +61,7 @@ export const ENDING_CATALOG: EndingCatalogEntry[] = [
     code: 'E3-R',
     title: 'Fight의 대가',
     grade: '조별리그 탈락',
-    condition: '탈락 · 사기 ≤ -80 · 6-1-C',
+    condition: '탈락 · 사기 ≤ −80 · 6-1-C 선택',
     summary: 'Fight 한마디가 모든 걸 망침',
   },
   {
@@ -70,7 +70,7 @@ export const ENDING_CATALOG: EndingCatalogEntry[] = [
     code: 'E3-S',
     title: '배신당한 감독',
     grade: '조별리그 탈락',
-    condition: '탈락 · 민심 ≥ +30 · 사기 ≤ -30',
+    condition: '탈락 · 민심 ≥ −140 · 사기 ≤ −30',
     summary: '여론은 괜찮았는데 팀이 무너짐',
   },
   {

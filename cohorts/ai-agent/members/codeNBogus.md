@@ -25,6 +25,7 @@
 | 완료 | 이벤트 가중치 밸런스 조정 (E1·E2·E6-1) | `web/src/data/events.ts`, `Docs/events.md` |
 | 완료 | endingResolver 임계값 수정 및 8개 엔딩 검증 | `web/src/game/endingResolver.ts` |
 | 완료 | EndingScreen 이펙트 리디자인 (긍정/부정 분기) | `web/src/screens/EndingScreen.tsx`, `web/src/index.css` |
+| 완료 | EndingCatalog 조건 문자열 수정 (실제 resolver 기준) | `web/src/data/endingCatalog.ts` |
 | 대기 중 | 이벤트 4·5·6-5 시나리오 작성 | `Docs/events.md` |
 
 ## 완료된 작업
@@ -152,6 +153,19 @@
 결과물:
 - [web/src/screens/EndingScreen.tsx](../../../web/src/screens/EndingScreen.tsx)
 - [web/src/index.css](../../../web/src/index.css)
+
+### 13. EndingCatalog 조건 문자열 수정
+
+- 작업일: 2026년 6월 30일
+- 시뮬레이션으로 8개 엔딩 모두 도달 가능 재검증 (7-4 경로 수정 포함)
+- endingCatalog.ts 조건 문자열 4개 수정 (기존 텍스트가 실제 resolver와 불일치)
+  - 7-2: `민심 ≥ +30 · 사기 ≥ +30` → `사기 ≥ +140 · 민심 ≥ −55`
+  - 7-3: `민심 ≥ +30 · 사기 ≥ +30` → `민심 ≥ −120 · 사기 ≥ +40`
+  - 7-5: `민심 ≤ −30 · 사기 ≥ +30` → `민심 ≤ −150 · 사기 ≥ +50`
+  - 7-7: `민심 ≥ +30 · 사기 ≤ −30` → `민심 ≥ −140 · 사기 ≤ −30`
+
+결과물:
+- [web/src/data/endingCatalog.ts](../../../web/src/data/endingCatalog.ts)
 
 ## 다음 작업
 
