@@ -16,8 +16,8 @@ description: >-
 - [ ] upstream 동기화 (.\scripts\sync-upstream.ps1)
 - [ ] Docs/project.md 읽기
 - [ ] 작업 관련 Docs/ 파일 확인 (events.md, 기존 조사 문서 등)
-- [ ] cohorts/ai-agent/members/progress_<이름>.md 읽기
-- [ ] progress 파일에 진행 중 행 추가
+- [ ] 본인 progress_<닉네임>.md 확인 (없으면 .\scripts\init-member-progress.ps1)
+- [ ] progress 파일에 진행 중 행 추가 ([member-progress](../member-progress/SKILL.md))
 - [ ] 필요 시 new-branch.ps1로 작업 브랜치 생성
 ```
 
@@ -38,7 +38,7 @@ git checkout main
 4. `Docs/git-workflow.md` — Git 작업 시
 5. `image/STYLE_GUIDE.md` — 이미지 작업 시
 
-사용자가 본인 progress 파일을 지정하지 않으면 `progress_jeon.md` 외 다른 `progress_*.md`가 있는지 확인하고, 없으면 [progress-template.md](progress-template.md)로 새 파일 생성을 제안한다.
+사용자가 본인 progress 파일을 지정하지 않으면 `cohorts/ai-agent/members/progress_*.md`를 확인한다. 없으면 `.\scripts\init-member-progress.ps1 -Nickname <닉네임>` 실행을 제안한다. 상세: [member-progress](../member-progress/SKILL.md).
 
 ## 진행 기록 갱신
 

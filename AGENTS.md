@@ -66,9 +66,11 @@
 
 | 규칙 | 내용 |
 |------|------|
-| 위치 | `cohorts/ai-agent/members/progress_<성>.md` |
-| 예시 | `progress_jeon.md` |
-| 없으면 | `progress-template.md`를 복사해 생성 |
+| 위치 | `cohorts/ai-agent/members/progress_<닉네임>.md` |
+| 예시 | `progress_jeon.md`, `progress_jeonghj.md` |
+| 없으면 | `.\scripts\init-member-progress.ps1 -Nickname <닉네임>` |
+
+상세 갱신 절차: [.cursor/skills/member-progress/SKILL.md](.cursor/skills/member-progress/SKILL.md)
 
 팀원마다 **에이전트 종류는 달라도 된다**. `progress_*.md`에 어떤 도구를 썼는지 적으면 충분하다.
 
